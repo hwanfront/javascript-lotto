@@ -3,13 +3,12 @@ const Lotto = require('./Lotto');
 const RandomLottoGenerator = require('./RandomLottoGenerator');
 
 class LottoMachine {
-  static insert(money) {
-    const lottoCount = LottoMachine.#count(money);
-    return Array.from({ length: lottoCount }, LottoMachine.#create);
+  static countPurchase(money) {
+    return Number(money) / LOTTO_PRICE;
   }
 
-  static #count(money) {
-    return Number(money) / LOTTO_PRICE;
+  static insert(count) {
+    return Array.from({ length: count }, LottoMachine.#create);
   }
 
   static #create() {
