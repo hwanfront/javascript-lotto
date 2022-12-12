@@ -27,10 +27,14 @@ class LottoResult {
   }
 
   #calculateTotalPrizeAmount() {
-    return [...this.prizes].reduce((total, prize) => {
-      const [name, count] = prize;
-      return total + Prize.getAmount(name) * count;
-    }, 0);
+    return [...this.prizes].reduce(
+      (total, [name, count]) => total + Prize.getAmount(name) * count,
+      0,
+    );
+  }
+
+  toString() {
+    return [...this.prizes].map(([name, count]) => Prize.toString(name, count)).join('\n');
   }
 }
 

@@ -18,9 +18,9 @@ const OutputView = {
       Console.print(`${lotto}\n`);
     });
   },
-  printPrizeResult(prizes) {
+  printPrizeResult(prizesResult) {
     Console.print(OutputView.message('PRIZE_RESULT_TITLE'));
-    Console.print(`${prizes}\n`);
+    Console.print(`${prizesResult}\n`);
   },
   printProfit(profit) {
     Console.print(`${OutputView.message('PROFIT_PREFIX')} ${profit}${OutputView.message('PROFIT_SUFFIX')}`);
