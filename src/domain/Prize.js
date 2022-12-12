@@ -11,6 +11,16 @@ class Prize {
       { name: PRIZE.first, match() { return count === PRIZE_MATCH_COUNT.first; } },
     ].find(({ match }) => match())?.name ?? 'NONE';
   }
+
+  static getAmount(name) {
+    return {
+      [PRIZE.fifth]: 5_000,
+      [PRIZE.fourth]: 50_000,
+      [PRIZE.third]: 1_500_000,
+      [PRIZE.second]: 30_000_000,
+      [PRIZE.first]: 2_000_000_000,
+    }[name];
+  }
 }
 
 module.exports = Prize;

@@ -21,5 +21,17 @@ class LottoResult {
     const prevPrizeCount = this.prizes.get(prize);
     this.prizes.set(prize, prevPrizeCount + 1);
   }
+
+  calculateProfit(lottoCount) {
+    return (this.#calculateTotalPrizeAmount() * 100) / (lottoCount * 1000);
+  }
+
+  #calculateTotalPrizeAmount() {
+    return [...this.prizes].reduce((total, prize) => {
+      const [name, count] = prize;
+      return total + Prize.getAmount(name) * count;
+    }, 0);
+  }
 }
+
 module.exports = LottoResult;
