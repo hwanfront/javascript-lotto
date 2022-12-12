@@ -1,16 +1,15 @@
 const { Random } = require('@woowacourse/mission-utils');
+const { LOTTO_RANGE } = require('../static/constant');
 
-const RandomLottoMaker = {
-  LOTTO_NUMBER_MIN: 1,
-  LOTTO_NUMBER_MAX: 45,
-  LOTTO_LENGTH: 6,
+const RandomLottoGenerator = {
+  LOTTO_RANGE,
   generate() {
     return Random.pickUniqueNumbersInRange(
-      RandomLottoMaker.LOTTO_NUMBER_MIN,
-      RandomLottoMaker.LOTTO_NUMBER_MAX,
-      RandomLottoMaker.LOTTO_LENGTH,
+      RandomLottoGenerator.LOTTO_RANGE.min,
+      RandomLottoGenerator.LOTTO_RANGE.max,
+      RandomLottoGenerator.LOTTO_RANGE.size,
     );
   },
 };
 
-module.exports = RandomLottoMaker;
+module.exports = RandomLottoGenerator;
