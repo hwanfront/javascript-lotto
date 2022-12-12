@@ -1,3 +1,4 @@
+const LottoNumberValidator = require('../validate/LottoNumberValidator');
 const LottoValidator = require('../validate/LottoValidator');
 
 class Lotto {
@@ -5,6 +6,7 @@ class Lotto {
 
   constructor(numbers) {
     LottoValidator.validate(numbers);
+    numbers.forEach(LottoNumberValidator.validate);
     this.#numbers = numbers;
   }
 
