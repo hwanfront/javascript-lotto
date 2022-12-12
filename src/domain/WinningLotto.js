@@ -9,6 +9,10 @@ class WinningLotto extends Lotto {
     LottoNumberValidator.validate(bonusNumber);
     this.#bonusNumber = bonusNumber;
   }
+
+  checkBonus(lotto) {
+    return lotto.has(this.#bonusNumber);
+  }
 }
 
 module.exports = WinningLotto;
