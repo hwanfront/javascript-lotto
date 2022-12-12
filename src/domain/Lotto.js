@@ -17,6 +17,10 @@ class Lotto {
   has(value) {
     return this.#numbers.includes(value);
   }
+
+  toString() {
+    return `[${this.#numbers.join(', ')}]`;
+  }
 }
 
 module.exports = Lotto;

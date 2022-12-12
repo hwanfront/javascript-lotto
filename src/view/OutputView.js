@@ -13,8 +13,10 @@ const OutputView = {
   printLottoCount(count) {
     Console.print(`${count}${OutputView.message('LOTTO_COUNT')}`);
   },
-  printLottos(lotto) {
-    Console.print(`${lotto}\n`);
+  printLottos(lottos) {
+    lottos.forEach((lotto) => {
+      Console.print(`${lotto}\n`);
+    });
   },
   printPrizeResult(prizes) {
     Console.print(OutputView.message('PRIZE_RESULT_TITLE'));
