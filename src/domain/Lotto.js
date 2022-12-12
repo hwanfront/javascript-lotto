@@ -12,6 +12,10 @@ class Lotto {
 
   // TODO: 추가 기능 구현
 
+  countSameNumbers(lotto) {
+    return this.#numbers.filter((number) => lotto.has(number)).length;
+  }
+
   has(value) {
     return this.#numbers.includes(value);
   }
