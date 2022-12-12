@@ -1,16 +1,15 @@
+const { LOTTO_PRICE } = require('../static/constant');
 const Lotto = require('./Lotto');
 const RandomLottoGenerator = require('./RandomLottoGenerator');
 
 class LottoMachine {
-  static #PRICE = 1000;
-
   static insert(money) {
     const lottoCount = LottoMachine.#count(money);
     return Array.from({ length: lottoCount }, LottoMachine.#create);
   }
 
   static #count(money) {
-    return Number(money) / LottoMachine.#PRICE;
+    return Number(money) / LOTTO_PRICE;
   }
 
   static #create() {

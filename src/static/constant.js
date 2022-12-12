@@ -4,6 +4,8 @@ const LOTTO_RANGE = Object.freeze({
   size: 6,
 });
 
+const LOTTO_PRICE = 1000;
+
 const PRIZE = Object.freeze({
   fifth: 'FIFTH',
   fourth: 'FOURTH',
@@ -22,6 +24,7 @@ const PRIZE_MATCH_COUNT = Object.freeze({
 
 module.exports = {
   LOTTO_RANGE,
+  LOTTO_PRICE,
   PRIZE,
   PRIZE_MATCH_COUNT,
 };

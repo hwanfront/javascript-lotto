@@ -1,4 +1,4 @@
-const { PRIZE } = require('../static/constant');
+const { PRIZE, LOTTO_PRICE } = require('../static/constant');
 const Prize = require('./Prize');
 
 class LottoResult {
@@ -23,7 +23,7 @@ class LottoResult {
   }
 
   calculateProfit(lottoCount) {
-    return (this.#calculateTotalPrizeAmount() * 100) / (lottoCount * 1000);
+    return (this.#calculateTotalPrizeAmount() * 100) / (lottoCount * LOTTO_PRICE);
   }
 
   #calculateTotalPrizeAmount() {
