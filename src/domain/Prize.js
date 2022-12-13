@@ -24,11 +24,11 @@ class Prize {
 
   static toString(name, count) {
     return {
-      [PRIZE.fifth]: `5등: ${PRIZE_MATCH_COUNT.fifth}개 번호 일치 / ${this.getAmount(name).toLocaleString()}원 - ${count}개`,
-      [PRIZE.fourth]: `4등: ${PRIZE_MATCH_COUNT.fourth}개 번호 일치 / ${this.getAmount(name).toLocaleString()}원 - ${count}개`,
-      [PRIZE.third]: `3등: ${PRIZE_MATCH_COUNT.third}개 번호 일치 / ${this.getAmount(name).toLocaleString()}원 - ${count}개`,
-      [PRIZE.second]: `2등: ${PRIZE_MATCH_COUNT.second}개 번호 + 보너스 번호 일치 / ${this.getAmount(name).toLocaleString()}원 - ${count}개`,
-      [PRIZE.first]: `1등: ${PRIZE_MATCH_COUNT.first}개 번호 일치 / ${this.getAmount(name).toLocaleString()}원 - ${count}개`,
+      [PRIZE.fifth]: `${PRIZE_MATCH_COUNT.fifth}개 일치 (${this.getAmount(name).toLocaleString()}원) - ${count}개`,
+      [PRIZE.fourth]: `${PRIZE_MATCH_COUNT.fourth}개 일치 (${this.getAmount(name).toLocaleString()}원) - ${count}개`,
+      [PRIZE.third]: `${PRIZE_MATCH_COUNT.third}개 일치 (${this.getAmount(name).toLocaleString()}원) - ${count}개`,
+      [PRIZE.second]: `${PRIZE_MATCH_COUNT.second}개 일치, 보너스 볼 일치 (${this.getAmount(name).toLocaleString()}원) - ${count}개`,
+      [PRIZE.first]: `${PRIZE_MATCH_COUNT.first}개 일치 (${this.getAmount(name).toLocaleString()}원) - ${count}개`,
     }[name];
   }
 }
