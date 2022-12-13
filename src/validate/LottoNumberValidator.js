@@ -3,8 +3,8 @@ const { LOTTO_RANGE } = require('../static/constant');
 
 const LottoNumberValidator = {
   validate(number) {
-    LottoNumberValidator.checkMinRange(number);
-    LottoNumberValidator.checkMaxRange(number);
+    this.checkMinRange(number);
+    this.checkMaxRange(number);
   },
   checkMinRange(number) {
     if (number < LOTTO_RANGE.min) {

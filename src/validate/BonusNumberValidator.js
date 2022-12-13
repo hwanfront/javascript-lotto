@@ -2,7 +2,7 @@ const BonusNumberDuplicatedException = require('../exception/BonusNumberDuplicat
 
 const BonusNumberValidator = {
   validate({ numbers, bonusNumber }) {
-    BonusNumberValidator.checkDuplicated({ numbers, bonusNumber });
+    this.checkDuplicated({ numbers, bonusNumber });
   },
   checkDuplicated({ numbers, bonusNumber }) {
     if (numbers.includes(bonusNumber)) {
