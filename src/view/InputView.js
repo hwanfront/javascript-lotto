@@ -29,8 +29,9 @@ const InputView = {
       callback(value);
     });
   },
+  close() {
+    Console.close();
+  },
 };
-
-InputView.readLottoNumbers((message) => { console.log(message); });
 
 module.exports = InputView;
