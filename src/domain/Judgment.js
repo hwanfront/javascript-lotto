@@ -6,7 +6,7 @@ class Judgment {
   }
 
   static compareNumbers({ lotto, winningLotto }) {
-    return winningLotto.findSameNumbers(lotto);
+    return winningLotto.countSameNumbers(lotto);
   }
 
   static findBonus({ lotto, winningLotto }) {
