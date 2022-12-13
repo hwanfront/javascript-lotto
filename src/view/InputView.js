@@ -1,4 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
+const InputLottoNumbersValidator = require('../validate/InputLottoNumbersValidator');
 
 const InputView = {
   message(type) {
@@ -12,11 +13,16 @@ const InputView = {
     Console.readLine(InputView.message('INPUT_LOOTO_PRICE'), callback);
   },
   readLottoNumbers(callback) {
-    Console.readLine(InputView.message('INPUT_LOTTO_NUMBERS'), callback);
+    Console.readLine(InputView.message('INPUT_LOTTO_NUMBERS'), (value) => {
+      InputLottoNumbersValidator.validate(value);
+      callback(value);
+    });
   },
   readBonusNumber(callback) {
     Console.readLine(InputView.message('INPUT_BONUS_NUMBER'), callback);
   },
 };
+
+InputView.readLottoNumbers((message) => { console.log(message); });
 
 module.exports = InputView;
