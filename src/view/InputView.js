@@ -1,5 +1,6 @@
 const { Console } = require('@woowacourse/mission-utils');
 const InputBonusNumberValidator = require('../validate/InputBonusNumberValidator');
+const InputLottoMoneyValidator = require('../validate/InputLottoMoneyValidator');
 const InputLottoNumbersValidator = require('../validate/InputLottoNumbersValidator');
 
 const InputView = {
@@ -11,7 +12,10 @@ const InputView = {
     }[type] ?? '해당 없음';
   },
   readLottoPrice(callback) {
-    Console.readLine(InputView.message('INPUT_LOOTO_PRICE'), callback);
+    Console.readLine(InputView.message('INPUT_LOOTO_PRICE'), (value) => {
+      InputLottoMoneyValidator.validate(value);
+      callback(value);
+    });
   },
   readLottoNumbers(callback) {
     Console.readLine(InputView.message('INPUT_LOTTO_NUMBERS'), (value) => {
