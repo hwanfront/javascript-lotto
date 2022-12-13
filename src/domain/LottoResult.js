@@ -12,8 +12,7 @@ class LottoResult {
     return Object.values(PRIZE).map((name) => [name, 0]);
   }
 
-  calculatePrize({ count, hasBonus }) {
-    const prize = Prize.calculate({ count, hasBonus });
+  calculatePrize(prize) {
     if (!this.prizes.has(prize)) {
       return;
     }

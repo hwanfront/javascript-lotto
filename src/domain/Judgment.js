@@ -1,7 +1,7 @@
 const Prize = require('./Prize');
 
 class Judgment {
-  static calculatePrize(count, hasBonus) {
+  static calculatePrize({ count, hasBonus }) {
     return Prize.calculate({ count, hasBonus });
   }
 
