@@ -1,11 +1,11 @@
 const { LOTTO_PRICE } = require('../static/constant');
-const LottoAmountValidator = require('../validate/LottoAmountValidator');
+const LottoMoneyValidator = require('../validate/LottoMoneyValidator');
 const Lotto = require('./Lotto');
 const RandomLottoGenerator = require('./RandomLottoGenerator');
 
 class LottoMachine {
   static countPurchase(money) {
-    LottoAmountValidator.validate(money);
+    LottoMoneyValidator.validate(money);
     return Number(money) / LOTTO_PRICE;
   }
 
