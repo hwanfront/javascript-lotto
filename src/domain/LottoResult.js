@@ -1,4 +1,4 @@
-const { PRIZE, LOTTO_PRICE } = require('../static/constant');
+const { PRIZE } = require('../static/constant');
 const Prize = require('./Prize');
 
 class LottoResult {
@@ -12,7 +12,7 @@ class LottoResult {
     return Object.values(PRIZE).map((name) => [name, 0]);
   }
 
-  calculatePrize(prize) {
+  addPrize(prize) {
     if (!this.prizes.has(prize)) {
       return;
     }
@@ -21,8 +21,8 @@ class LottoResult {
     this.prizes.set(prize, prevPrizeCount + 1);
   }
 
-  calculateProfit(lottoCount) {
-    return (this.#calculateTotalPrizeAmount() * 100) / (lottoCount * LOTTO_PRICE);
+  calculateProfit(spendMoney) {
+    return (this.#calculateTotalPrizeAmount() * 100) / spendMoney;
   }
 
   #calculateTotalPrizeAmount() {
