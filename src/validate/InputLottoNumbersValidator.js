@@ -1,4 +1,4 @@
-const NotNumberException = require('../exception/NotNumberException');
+const CommonValidator = require('./CommonValidator');
 const LottoNumberValidator = require('./LottoNumberValidator');
 const LottoValidator = require('./LottoValidator');
 
@@ -10,14 +10,9 @@ const InputLottoNumbersValidator = {
   },
   checkNumbers(numbers) {
     numbers.forEach((number) => {
-      this.checkIsNumber(number);
+      CommonValidator.checkIsNumber(number);
       LottoNumberValidator.validate(number);
     });
-  },
-  checkIsNumber(number) {
-    if (Number.isNaN(parseInt(number, 10)) || typeof number !== 'number') {
-      throw new NotNumberException();
-    }
   },
 };
 
