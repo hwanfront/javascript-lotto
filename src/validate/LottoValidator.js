@@ -4,8 +4,8 @@ const { LOTTO_RANGE } = require('../static/constant');
 
 const LottoValidator = {
   validate(numbers) {
-    this.checkSize(numbers);
-    this.checkDuplicated(numbers);
+    LottoValidator.checkSize(numbers);
+    LottoValidator.checkDuplicated(numbers);
   },
   checkSize(numbers) {
     if (numbers.length !== LOTTO_RANGE.size) {

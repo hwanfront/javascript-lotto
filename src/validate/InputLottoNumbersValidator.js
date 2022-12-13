@@ -6,7 +6,7 @@ const InputLottoNumbersValidator = {
   validate(value) {
     const numbers = value.split(',').map(Number);
     LottoValidator.checkSize(numbers);
-    this.checkNumbers(numbers);
+    InputLottoNumbersValidator.checkNumbers(numbers);
   },
   checkNumbers(numbers) {
     numbers.forEach((number) => {

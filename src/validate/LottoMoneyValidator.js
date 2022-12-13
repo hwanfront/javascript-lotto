@@ -4,8 +4,8 @@ const { LOTTO_PRICE } = require('../static/constant');
 
 const LottoMoneyValidator = {
   validate(number) {
-    this.checkLessThan(number);
-    this.checkNotDivided(number);
+    LottoMoneyValidator.checkLessThan(number);
+    LottoMoneyValidator.checkNotDivided(number);
   },
   checkLessThan(number) {
     if (number < LOTTO_PRICE) {
