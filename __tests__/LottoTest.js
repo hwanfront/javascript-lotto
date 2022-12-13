@@ -1,6 +1,7 @@
 const Lotto = require('../src/domain/Lotto');
 const LottoSizeException = require('../src/exception/LottoSizeException');
 const LottoDuplicatedException = require('../src/exception/LottoDuplicatedException');
+const LottoNumberRangeException = require('../src/exception/LottoNumberRangeException');
 
 describe('로또 클래스 테스트', () => {
   test.each([
@@ -19,6 +20,15 @@ describe('로또 클래스 테스트', () => {
     const lotto1 = new Lotto(numbers1);
     const lotto2 = new Lotto(numbers2);
     expect(lotto1.countSameNumbers(lotto2)).toEqual(count);
+  });
+
+  test.each([
+    [[1, 2, 3, 4, 5, 46]],
+    [[0, 2, 3, 4, 5, 6]],
+  ])('로또 번호들에 범위를 벗어난 숫자가 있으면 예외가 발생한다.', (numbers) => {
+    expect(() => {
+      new Lotto(numbers);
+    }).toThrow(LottoNumberRangeException);
   });
 
   test.each([
