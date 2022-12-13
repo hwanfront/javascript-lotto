@@ -8,7 +8,10 @@ const RandomLottoGenerator = {
       RandomLottoGenerator.LOTTO_RANGE.min,
       RandomLottoGenerator.LOTTO_RANGE.max,
       RandomLottoGenerator.LOTTO_RANGE.size,
-    );
+    ).sort(this.sortByNumber);
+  },
+  sortByNumber(a, b) {
+    return a - b;
   },
 };
 
