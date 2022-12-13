@@ -1,4 +1,5 @@
 const { Console } = require('@woowacourse/mission-utils');
+const InputBonusNumberValidator = require('../validate/InputBonusNumberValidator');
 const InputLottoNumbersValidator = require('../validate/InputLottoNumbersValidator');
 
 const InputView = {
@@ -19,7 +20,10 @@ const InputView = {
     });
   },
   readBonusNumber(callback) {
-    Console.readLine(InputView.message('INPUT_BONUS_NUMBER'), callback);
+    Console.readLine(InputView.message('INPUT_BONUS_NUMBER'), (value) => {
+      InputBonusNumberValidator.validate(value);
+      callback(value);
+    });
   },
 };
 
